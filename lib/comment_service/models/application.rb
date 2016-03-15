@@ -11,7 +11,8 @@ class Application < Sequel::Model
 
   def validate
     super
-    validates_presence [:name, :token]
+    validates_presence :name, :message => "param is missing"
+    validates_presence :token
     validates_unique :token
   end
 
